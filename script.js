@@ -1,17 +1,34 @@
-// 질문 예시
 const questions = [
   {
-    question: "당신은 아침형 인간인가요?",
+    question: "손을 얼마나 자주 씻는 편인가요?",
     answers: [
-      { text: "예", score: 1 },
-      { text: "아니요", score: 0 }
+      { text: "거의 매번 씻는다", score: 2 },
+      { text: "중간 정도", score: 1 },
+      { text: "자주 안 씻는다", score: 0 }
     ]
   },
   {
-    question: "팀 프로젝트를 좋아하나요?",
+    question: "손을 씻을 때 비누를 사용하나요?",
     answers: [
-      { text: "예", score: 1 },
-      { text: "아니요", score: 0 }
+      { text: "항상 사용한다", score: 2 },
+      { text: "가끔 사용한다", score: 1 },
+      { text: "거의 사용하지 않는다", score: 0 }
+    ]
+  },
+  {
+    question: "손을 씻는 시간은 얼마나 되나요?",
+    answers: [
+      { text: "20초 이상", score: 2 },
+      { text: "10~20초", score: 1 },
+      { text: "10초 미만", score: 0 }
+    ]
+  },
+  {
+    question: "손씻기 후 바로 물기를 닦나요?",
+    answers: [
+      { text: "항상 닦는다", score: 2 },
+      { text: "가끔 닦는다", score: 1 },
+      { text: "거의 닦지 않는다", score: 0 }
     ]
   }
 ];
@@ -22,10 +39,10 @@ let score = 0;
 const startContainer = document.getElementById('start-container');
 const questionContainer = document.getElementById('question-container');
 const resultContainer = document.getElementById('result-container');
-
 const questionElement = document.getElementById('question');
 const answerButtons = document.getElementById('answer-buttons');
 const resultText = document.getElementById('result-text');
+const resultImage = document.getElementById('result-image');
 
 document.getElementById('start-btn').addEventListener('click', startQuiz);
 document.getElementById('restart-btn').addEventListener('click', restartQuiz);
@@ -69,10 +86,16 @@ function selectAnswer(selectedScore) {
 function showResult() {
   questionContainer.classList.add('hide');
   resultContainer.classList.remove('hide');
-  if (score >= 2) {
-    resultText.innerText = "당신은 적극적인 유형입니다!";
+
+  if (score >= 7) {
+    resultText.innerText = "청결왕! 손 위생 습관이 매우 우수한 유형입니다.";
+    resultImage.src = "https://source.unsplash.com/360x200/?clean,hands";
+  } else if (score >= 4) {
+    resultText.innerText = "중간형! 손 위생 습관이 보통 수준인 유형입니다.";
+    resultImage.src = "https://source.unsplash.com/360x200/?hands";
   } else {
-    resultText.innerText = "당신은 신중한 유형입니다!";
+    resultText.innerText = "주의형! 손 위생 습관이 부족한 유형입니다.";
+    resultImage.src = "https://source.unsplash.com/360x200/?dirty,hands";
   }
 }
 
@@ -80,3 +103,4 @@ function restartQuiz() {
   resultContainer.classList.add('hide');
   startContainer.classList.remove('hide');
 }
+
