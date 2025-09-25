@@ -57,7 +57,7 @@ function startQuiz() {
 
 function showQuestion() {
   resetState();
-  let currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
   questionElement.innerText = currentQuestion.question;
 
   currentQuestion.answers.forEach(answer => {
@@ -87,6 +87,7 @@ function showResult() {
   questionContainer.classList.add('hide');
   resultContainer.classList.remove('hide');
 
+  // 결과 텍스트와 이미지
   if (score >= 7) {
     resultText.innerText = "청결왕! 손 위생 습관이 매우 우수한 유형입니다.";
     resultImage.src = "https://source.unsplash.com/360x200/?clean,hands";
@@ -97,10 +98,22 @@ function showResult() {
     resultText.innerText = "주의형! 손 위생 습관이 부족한 유형입니다.";
     resultImage.src = "https://source.unsplash.com/360x200/?dirty,hands";
   }
+
+  // '손씻기 6단계 보러가기' 버튼 추가
+  const youtubeBtn = document.createElement('button');
+  youtubeBtn.innerText = "손씻기 6단계 보러가기";
+  youtubeBtn.style.backgroundColor = "#2196F3";
+  youtubeBtn.addEventListener('click', () => {
+    window.open("https://www.youtube.com/watch?v=d7jAZCIGX4I", "_blank");
+  });
+  resultContainer.appendChild(youtubeBtn);
 }
 
 function restartQuiz() {
   resultContainer.classList.add('hide');
   startContainer.classList.remove('hide');
-}
 
+  // 결과 페이지 버튼 제거 (중복 방지)
+  const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
+  if (extraBtn) extraBtn.remove();
+}
