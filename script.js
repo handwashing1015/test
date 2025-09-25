@@ -117,3 +117,4 @@ function restartQuiz() {
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
+
