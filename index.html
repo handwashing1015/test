@@ -2,54 +2,33 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>나의 손씻기 유형 테스트</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>성격 유형 테스트</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
+    <!-- 시작 화면 -->
+    <div id="start-container">
+      <h1>성격 유형 테스트</h1>
+      <button id="start-btn">시작하기</button>
+    </div>
 
-    <!-- COVER / START PAGE -->
-    <section id="cover" class="cover">
-      <div class="cover-inner">
-        <img src="img/cover-image.jpg" alt="표지 이미지" class="cover-image" />
-        <h1 class="cover-title">나의 손씻기 유형 테스트</h1>
-        <p class="cover-sub">간단한 질문에 답해서 당신의 유형을 확인해보세요.</p>
-        <button id="start-btn" class="btn primary">테스트 시작</button>
-      </div>
-      <div class="cover-footer">총 3문항 · 소요시간 약 1분</div>
-    </section>
+    <!-- 질문 영역 -->
+    <div id="question-container" class="hide">
+      <p id="question">질문이 여기에 표시됩니다.</p>
+      <div id="answer-buttons"></div>
+    </div>
 
-    <!-- MAIN QUIZ -->
-    <main id="main" class="hide">
-      <div class="container">
-        <h1 class="site-title">나의 손씻기 유형 테스트</h1>
-
-        <!-- 질문 영역 -->
-        <div id="question-container">
-          <img id="question-image" src="" alt="" class="question-img" />
-          <p id="question" class="question-text">질문이 여기에 표시됩니다.</p>
-          <div id="answer-buttons" class="answers"></div>
-          <div class="progress">
-            <div id="progress-bar" class="progress-bar"></div>
-          </div>
-        </div>
-
-        <!-- 결과 영역 -->
-        <div id="result-container" class="hide result-box">
-          <h2>결과</h2>
-          <img id="result-image" src="" alt="" class="result-img" />
-          <p id="result-text" class="result-text"></p>
-          <div class="result-actions">
-            <button id="restart-btn" class="btn">다시하기</button>
-            <a id="share-link" class="btn outline" href="#" target="_blank">공유하기</a>
-          </div>
-        </div>
-      </div>
-    </main>
-
+    <!-- 결과 영역 -->
+    <div id="result-container" class="hide">
+      <h2>결과</h2>
+      <p id="result-text"></p>
+      <button id="restart-btn">다시하기</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
