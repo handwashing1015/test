@@ -20,7 +20,7 @@ body {
 /* 시작 화면 이미지 */
 .start-image {
   width: 100%;
-  height: 240px;
+  height: 320px;
   background-image: url('https://handwashing1015.github.io/test/img/표지.png'); /* 표지 이미지 */
   background-size: cover;
   background-position: center;
@@ -71,6 +71,7 @@ button:hover {
 .hide {
   display: none;
 }
+
 
 
 
