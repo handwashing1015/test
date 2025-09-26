@@ -1,34 +1,50 @@
 const questions = [
   {
-    question: "손을 얼마나 자주 씻는 편인가요?",
+    question: "공중 화장실에서 볼일을 본 당신.
+      세면대에 줄이 길게 있습니다.
+  이때 당신은?",
     answers: [
-      { text: "거의 매번 씻는다", score: 2 },
-      { text: "중간 정도", score: 1 },
-      { text: "자주 안 씻는다", score: 0 }
+      { text: "줄을 기다렸다가 손 씻고 나가자.", score: 3 },
+      { text: "손은 이따 집에 가서 씻자.", score: 2 },
+      { text: "안 바쁘면 손 씻고 나가자.", score: 1 },
+      { text: "그냥 얼른 나가자.", score: 0 }
     ]
   },
   {
-    question: "손을 씻을 때 비누를 사용하나요?",
+    question: "마침 세면대 자리 하나가 비어 손을 씻기로 합니다.
+이때 드는 생각은?",
     answers: [
-      { text: "항상 사용한다", score: 2 },
-      { text: "가끔 사용한다", score: 1 },
-      { text: "거의 사용하지 않는다", score: 0 }
+      { text: "음, 비누 있고, 핸드티슈도 있고. 딱 좋아!", score: 3 },
+      { text: "자리가 생기다니, 다행이다!", score: 2 },
+      { text: "갑자기 귀찮은데.. 씻지 말까..?", score: 1 },
+      { text: "물만 묻히고 빨리 가야겠다!", score: 0 }
     ]
   },
   {
-    question: "손을 씻는 시간은 얼마나 되나요?",
+    question: "당신이 손을 씻는 시간은 얼마나 되나요?",
     answers: [
-      { text: "20초 이상", score: 2 },
-      { text: "10~20초", score: 1 },
-      { text: "10초 미만", score: 0 }
+      { text: "구석구석 씻다 보면 30초 순삭!", score: 3 },
+      { text: "15초까지는 거뜬해!", score: 2 },
+      { text: "바쁜 날엔 5초, 안 바쁜 날엔 10초!", score: 1 },
+      { text: "한국인은 빨리빨리! 3초면 끝!", score: 0 }
     ]
   },
   {
-    question: "손씻기 후 바로 물기를 닦나요?",
+    question: "당신은 손을 어떻게 씻나요?",
     answers: [
-      { text: "항상 닦는다", score: 2 },
-      { text: "가끔 닦는다", score: 1 },
-      { text: "거의 닦지 않는다", score: 0 }
+      { text: "손바닥, 손등, 손톱 밑, 손가락 사이까지 비누로!", score: 3 },
+      { text: "비누로 손바닥끼리 비비고 물로 헹구자!", score: 2 },
+      { text: "손이 찝찝하면 비누로, 안 찝찝하면 물로만~", score: 1 },
+      { text: "물로만 씻어도 충분해!", score: 0 }
+    ]
+  },
+      {
+    question: "손을 다 씻은 당신, 화장실을 나가기 전 하는 일은??",
+    answers: [
+      { text: "손 건조기나 티슈로 물기 완벽 제거!", score: 3 },
+      { text: "손을 털거나 옷에 물기를 닦기", score: 2 },
+      { text: "손 탈탈 털어주면 끝!", score: 1 },
+      { text: "얼른 나가자!", score: 0 }
     ]
   }
 ];
@@ -88,8 +104,15 @@ function showResult() {
   resultContainer.classList.remove('hide');
 
   // 결과 텍스트와 이미지
-  if (score >= 7) {
-    resultText.innerText = "청결왕! 손 위생 습관이 매우 우수한 유형입니다.";
+  if (score = 15) {
+    resultText.innerText = "<손씻기 모범생형>
+      
+      손씻기 100점입니다.
+        지금처럼만 쭉~
+        
+        
+        ★ 손씻기 6단계를 잘 기억해요.
+        ☆ 30초 이상, 비누로 꼼꼼히!";
     resultImage.src = "https://source.unsplash.com/360x200/?clean,hands";
   } else if (score >= 4) {
     resultText.innerText = "중간형! 손 위생 습관이 보통 수준인 유형입니다.";
@@ -117,4 +140,5 @@ function restartQuiz() {
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
+
 
