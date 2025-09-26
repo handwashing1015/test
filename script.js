@@ -1,8 +1,6 @@
 const questions = [
   {
-    question: "공중 화장실에서 볼일을 본 당신.
-      세면대에 줄이 길게 있습니다.
-  이때 당신은?",
+    question: "공중 화장실에서 볼일을 본 당신.\n세면대에 줄이 길게 있습니다.\n이때 당신은?",
     answers: [
       { text: "줄을 기다렸다가 손 씻고 나가자.", score: 3 },
       { text: "손은 이따 집에 가서 씻자.", score: 2 },
@@ -11,8 +9,7 @@ const questions = [
     ]
   },
   {
-    question: "마침 세면대 자리 하나가 비어 손을 씻기로 합니다.
-이때 드는 생각은?",
+    question: "마침 세면대 자리 하나가 비어 손을 씻기로 합니다.\n이때 드는 생각은?",
     answers: [
       { text: "음, 비누 있고, 핸드티슈도 있고. 딱 좋아!", score: 3 },
       { text: "자리가 생기다니, 다행이다!", score: 2 },
@@ -38,7 +35,7 @@ const questions = [
       { text: "물로만 씻어도 충분해!", score: 0 }
     ]
   },
-      {
+  {
     question: "손을 다 씻은 당신, 화장실을 나가기 전 하는 일은??",
     answers: [
       { text: "손 건조기나 티슈로 물기 완벽 제거!", score: 3 },
@@ -79,7 +76,6 @@ function showQuestion() {
   currentQuestion.answers.forEach(answer => {
     const button = document.createElement('button');
     button.innerText = answer.text;
-    button.classList.add('btn');
     button.addEventListener('click', () => selectAnswer(answer.score));
     answerButtons.appendChild(button);
   });
@@ -104,58 +100,25 @@ function showResult() {
   resultContainer.classList.remove('hide');
 
   // 결과 텍스트와 이미지
-  if (score = 15) {
-    resultText.innerText = "<손씻기 모범생형>
-      
-      손씻기 100점입니다.
-        지금처럼만 쭉~
-        
-        
-        ★ 손씻기 6단계를 잘 기억해요.
-        ☆ 30초 이상, 비누로 꼼꼼히!";
+  if (score === 15) {
+    resultText.innerText = "손씻기 모범생형\n손씻기 100점입니다. 지금처럼만 쭉~\n★ 손씻기 6단계를 잘 기억해요.\n☆ 30초 이상, 비누로 꼼꼼히!";
     resultImage.src = "https://handwashing1015.github.io/test/img/손씻기 모범생형.png";
   } else if (score >= 12) {
-    resultText.innerText = "<거의 완벽형>
-      
-     손을 잘 씻고 있어요.
-       조금만 더 힘내 봐요!
-       
-    
-    ★ 손바닥, 손등, 손톱 밑, 손가락 사이까지
-      구석구석 씻는 연습을 해요.
-☆ 30초 이상 손씻기에 도전해요!
-★ 손 건조기나 티슈로 손을 말려보세요.";
+    resultText.innerText = "거의 완벽형\n손을 잘 씻고 있어요. 조금만 더 힘내 봐요!\n★ 손바닥, 손등, 손톱 밑, 손가락 사이까지 구석구석 씻는 연습을 해요.\n☆ 30초 이상 손씻기에 도전해요!\n★ 손 건조기나 티슈로 손을 말려보세요.";
     resultImage.src = "https://handwashing1015.github.io/test/img/거의완벽형.png";
   } else if (score >= 6) {
-    resultText.innerText = "<선택적 손씻기형>
-      
-      세균은 선택적으로 있지 않아요.
-언제나 우리 주변에 있어요!
-        
-        
-★ 귀찮아도 30초 동안 손을 씻어요.
-☆ 비누를 사용해야 세균이 제거돼요.
-★ 외출 후, 화장실 이용 후,
-  음식을 먹기 전
-  모두 손씻기가 필요해요!";
+    resultText.innerText = "선택적 손씻기형\n세균은 선택적으로 있지 않아요. 언제나 우리 주변에 있어요!\n★ 귀찮아도 30초 동안 손을 씻어요.\n☆ 비누를 사용해야 세균이 제거돼요.\n★ 외출 후, 화장실 이용 후, 음식을 먹기 전 모두 손씻기가 필요해요!";
     resultImage.src = "https://handwashing1015.github.io/test/img/선택적손씻기형.png";
-      } else if (score < 6) {
-    resultText.innerText = "<속전속결형>
-      
-바쁘다 바빠 현대사회에도
-손은 깨끗하게 씻어야죠!
-        
-        
-★ 바쁘고 귀찮아도 손은 꼭 씻어요.
-☆ 짧더라도 비누를 사용해서 손을 씻어요.
-★ 손을 씻고 말리면 더 좋아요.";
+  } else {
+    resultText.innerText = "속전속결형\n바쁘다 바빠 현대사회에도 손은 깨끗하게 씻어야죠!\n★ 바쁘고 귀찮아도 손은 꼭 씻어요.\n☆ 짧더라도 비누를 사용해서 손을 씻어요.\n★ 손을 씻고 말리면 더 좋아요.";
     resultImage.src = "https://handwashing1015.github.io/test/img/속전속결형.png";
   }
 
-  // '손씻기 6단계 보러가기' 버튼 추가
-  const youtubeBtn = document.createElement('button');
+  // 유튜브 버튼 추가
+  let youtubeBtn = document.createElement('button');
   youtubeBtn.innerText = "손씻기 6단계 보러가기";
   youtubeBtn.style.backgroundColor = "#2196F3";
+  youtubeBtn.style.marginTop = "10px";
   youtubeBtn.addEventListener('click', () => {
     window.open("https://www.youtu.be/8kSw3plrSQl?si=4MK8YzLlAh2-xJeR", "_blank");
   });
@@ -166,11 +129,7 @@ function restartQuiz() {
   resultContainer.classList.add('hide');
   startContainer.classList.remove('hide');
 
-  // 결과 페이지 버튼 제거 (중복 방지)
+  // 결과 화면에 추가된 유튜브 버튼 제거
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
-
-
-
-
