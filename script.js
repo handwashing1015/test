@@ -120,7 +120,7 @@ function showResult() {
   youtubeBtn.style.backgroundColor = "#2196F3";
   youtubeBtn.style.marginTop = "10px";
   youtubeBtn.addEventListener('click', () => {
-    window.open("https://www.youtu.be/8kSw3plrSQl?si=4MK8YzLlAh2-xJeR", "_blank");
+    window.open("https://youtu.be/8kSw3pIrSQI?si=4MK8YzLIAh2-xJeR", "_blank");
   });
   resultContainer.appendChild(youtubeBtn);
 }
@@ -133,5 +133,6 @@ function restartQuiz() {
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
+
 
 
