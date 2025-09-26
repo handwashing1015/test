@@ -113,13 +113,43 @@ function showResult() {
         
         ★ 손씻기 6단계를 잘 기억해요.
         ☆ 30초 이상, 비누로 꼼꼼히!";
-    resultImage.src = "https://source.unsplash.com/360x200/?clean,hands";
-  } else if (score >= 4) {
-    resultText.innerText = "중간형! 손 위생 습관이 보통 수준인 유형입니다.";
-    resultImage.src = "https://source.unsplash.com/360x200/?hands";
-  } else {
-    resultText.innerText = "주의형! 손 위생 습관이 부족한 유형입니다.";
-    resultImage.src = "https://source.unsplash.com/360x200/?dirty,hands";
+    resultImage.src = "https://handwashing1015.github.io/test/img/손씻기 모범생형.png";
+  } else if (score >= 12) {
+    resultText.innerText = "<거의 완벽형>
+      
+     손을 잘 씻고 있어요.
+       조금만 더 힘내 봐요!
+       
+    
+    ★ 손바닥, 손등, 손톱 밑, 손가락 사이까지
+      구석구석 씻는 연습을 해요.
+☆ 30초 이상 손씻기에 도전해요!
+★ 손 건조기나 티슈로 손을 말려보세요.";
+    resultImage.src = "https://handwashing1015.github.io/test/img/거의완벽형.png";
+  } else if (score >= 6) {
+    resultText.innerText = "<선택적 손씻기형>
+      
+      세균은 선택적으로 있지 않아요.
+언제나 우리 주변에 있어요!
+        
+        
+★ 귀찮아도 30초 동안 손을 씻어요.
+☆ 비누를 사용해야 세균이 제거돼요.
+★ 외출 후, 화장실 이용 후,
+  음식을 먹기 전
+  모두 손씻기가 필요해요!";
+    resultImage.src = "https://handwashing1015.github.io/test/img/선택적손씻기형.png";
+      } else if (score < 6) {
+    resultText.innerText = "<속전속결형>
+      
+바쁘다 바빠 현대사회에도
+손은 깨끗하게 씻어야죠!
+        
+        
+★ 바쁘고 귀찮아도 손은 꼭 씻어요.
+☆ 짧더라도 비누를 사용해서 손을 씻어요.
+★ 손을 씻고 말리면 더 좋아요.";
+    resultImage.src = "https://handwashing1015.github.io/test/img/속전속결형.png";
   }
 
   // '손씻기 6단계 보러가기' 버튼 추가
@@ -127,7 +157,7 @@ function showResult() {
   youtubeBtn.innerText = "손씻기 6단계 보러가기";
   youtubeBtn.style.backgroundColor = "#2196F3";
   youtubeBtn.addEventListener('click', () => {
-    window.open("https://www.youtube.com/watch?v=d7jAZCIGX4I", "_blank");
+    window.open("https://www.youtu.be/8kSw3plrSQl?si=4MK8YzLlAh2-xJeR", "_blank");
   });
   resultContainer.appendChild(youtubeBtn);
 }
@@ -140,5 +170,6 @@ function restartQuiz() {
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
+
 
 
