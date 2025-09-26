@@ -103,10 +103,10 @@ function showResult() {
   if (score === 15) {
     resultText.innerText = "손씻기 모범생형\n손씻기 100점입니다. 지금처럼만 쭉~\n★ 손씻기 6단계를 잘 기억해요.\n☆ 30초 이상, 비누로 꼼꼼히!";
     resultImage.src = "https://handwashing1015.github.io/test/img/손씻기 모범생형.PNG";
-  } else if (score >= 12) {
+  } else if (score >= 10) {
     resultText.innerText = "거의 완벽형\n손을 잘 씻고 있어요. 조금만 더 힘내 봐요!\n★ 손바닥, 손등, 손톱 밑, 손가락 사이까지 구석구석 씻는 연습을 해요.\n☆ 30초 이상 손씻기에 도전해요!\n★ 손 건조기나 티슈로 손을 말려보세요.";
     resultImage.src = "https://handwashing1015.github.io/test/img/거의완벽형.PNG";
-  } else if (score >= 6) {
+  } else if (score >= 5) {
     resultText.innerText = "선택적 손씻기형\n세균은 선택적으로 있지 않아요. 언제나 우리 주변에 있어요!\n★ 귀찮아도 30초 동안 손을 씻어요.\n☆ 비누를 사용해야 세균이 제거돼요.\n★ 외출 후, 화장실 이용 후, 음식을 먹기 전 모두 손씻기가 필요해요!";
     resultImage.src = "https://handwashing1015.github.io/test/img/선택적손씻기형.PNG";
   } else {
@@ -133,4 +133,5 @@ function restartQuiz() {
   const extraBtn = resultContainer.querySelector('button:nth-of-type(2)');
   if (extraBtn) extraBtn.remove();
 }
+
 
